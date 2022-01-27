@@ -7,9 +7,9 @@ cnf_repeat_count=20 # How many times to repeat the tests
 cnf_run_ping=1 # Whether to conduct ping test
 cnf_run_speedtest=0 # Whether to conduct speed test
 
-cnf_map_file="./network_map.csv" # CSV file containing the network map
-cnf_my_ip="10.56.41.210" # This node's ip
-cnf_log_folder="./${cnf_my_ip}-log" # Folder where to save logs. Make sure the directory exists!
+cnf_map_file="/home/janastu/network_monitoring/network_map.csv" # CSV file containing the network map
+cnf_my_ip="10.56.130.10" # This node's ip
+cnf_log_folder="/var/www/html/network-monitoring/${cnf_my_ip}-log" # Folder where to save logs. Make sure the directory exists!
 cnf_ping_internet_ip="8.8.8.8" # ip to ping when doing ping test to internet
 
 # Source config file if specified on command line
