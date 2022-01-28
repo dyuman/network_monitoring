@@ -1,0 +1,5 @@
+cnf_verbose=0 # Display test information on stdout also
+cnf_only_one_hop=1 # Test only to directly neighboring nodes
+cnf_repeat_count=20 # How many times to repeat the tests
+cnf_run_ping=1 # Whether to conduct ping test
+cnf_run_speedtest=0 # Whether to conduct speed test
