@@ -5,7 +5,7 @@ cnf_verbose=0 # Display test information on stdout also
 cnf_only_one_hop=1 # Test only to directly neighboring nodes
 cnf_repeat_count=20 # How many times to repeat the tests
 cnf_run_ping=1 # Whether to conduct ping test
-cnf_run_speedtest=0 # Whether to conduct speed test
+cnf_run_speedtest=1 # Whether to conduct speed test
 
 cnf_map_file="/home/janastu/network_monitoring/network_map.csv" # CSV file containing the network map
 cnf_my_ip="10.56.130.10" # This node's ip
@@ -131,7 +131,7 @@ do
 		network_test_log_stdout "Local speedtest"
 
 		# Run the speed test
-		iperf_output="$(iperf -c ${node} -d -fm)"
+		iperf_output="$(iperf -c ${node} -fm -t2)"
 		iperf_retval=${?}
 		if [ ${iperf_retval} -eq 0 ]; then
 		    # If the speed test was successful, extract the download and upload values from iperf's output
@@ -148,9 +148,9 @@ do
 	    fi
 
 	    # Write to the log files
-	    log_file_out="$(date +%Y-%m-%d_%H:%M:%S),${retval},${downspeed}"
+	    log_file_out="$(date "+%a %d %b %H:%M:%S IST %Y"),${retval},${downspeed}"
 	    echo "${log_file_out}" >> "${cnf_log_folder}/${cnf_my_ip}-${node}-download.csv"
-	    log_file_out="$(date +%Y-%m-%d_%H:%M:%S),${retval},${upspeed}"
+	    log_file_out="$(date "+%a %d %b %H:%M:%S IST %Y"),${retval},${upspeed}"
 	    echo "${log_file_out}" >> "${cnf_log_folder}/${cnf_my_ip}-${node}-upload.csv"
 	fi
     done
