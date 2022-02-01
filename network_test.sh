@@ -5,7 +5,7 @@ cnf_verbose=0 # Display test information on stdout also
 cnf_only_one_hop=1 # Test only to directly neighboring nodes
 cnf_repeat_count=20 # How many times to repeat the tests
 cnf_run_ping=1 # Whether to conduct ping test
-cnf_run_speedtest=0 # Whether to conduct speed test
+cnf_run_speedtest=1 # Whether to conduct speed test
 
 cnf_map_file="/home/pi/network_monitoring/network_map.csv" # CSV file containing the network map
 cnf_my_ip="192.168.1.51" # This node's ip
@@ -131,7 +131,11 @@ do
 		network_test_log_stdout "Local speedtest"
 
 		# Run the speed test
+<<<<<<< HEAD
 		iperf_output="$(iperf -c ${node} -d -fm -t2)"
+=======
+		iperf_output="$(iperf -c ${node} -fm -t2)"
+>>>>>>> ee2924dddaccb18cef3b46e23806c91aabe05505
 		iperf_retval=${?}
 		if [ ${iperf_retval} -eq 0 ]; then
 		    # If the speed test was successful, extract the download and upload values from iperf's output
