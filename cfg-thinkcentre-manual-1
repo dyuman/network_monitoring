@@ -1,3 +1,9 @@
+# This configuration is meant to be run manually when needed, on Thinkcentre (it expects that Thinkcentre has ip 10.56.130.10)
+# --> It prints real time information on the terminal screen while testing
+# --> It tests connection to all the nodes in network map file
+# --> It does both ping and speedtest (where applicable)
+# --> It repeats each test 2 times
+
 cnf_verbose=1 # Display test information on stdout also
 cnf_only_one_hop=0 # Test only to directly neighboring nodes
 cnf_repeat_count=2 # How many times to repeat the tests

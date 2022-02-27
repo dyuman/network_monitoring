@@ -1,3 +1,9 @@
+# This configuration is meant to be run every 10 minutes from cron, on Ravemill Pi (it expects that Pi has ip 192.168.1.51)
+# --> It does not print anything on the terminal while testing
+# --> It tests connection only to the nodes in network map file, which have "192.168.1.51" written next to them
+# --> It does ping test only, no speedtest
+# --> It repeats each ping 20 times
+
 cnf_verbose=0 # Display test information on stdout also
 cnf_only_one_hop=1 # Test only to directly neighboring nodes
 cnf_repeat_count=20 # How many times to repeat the tests

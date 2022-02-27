@@ -1,3 +1,9 @@
+# This configuration is meant to be run every 10 minutes from cron, on Thinkcentre (it expects that Thinkcentre has ip 10.56.130.10)
+# --> It does not print anything on the terminal while testing
+# --> It tests connection only to the nodes in network map file, which have "10.56.130.10" written next to them
+# --> It does both ping and speedtest (where applicable)
+# --> It repeats each test 20 times
+
 # Default settings
 cnf_verbose=0 # Display test information on stdout also
 cnf_only_one_hop=1 # Test only to directly neighboring nodes
